@@ -3,17 +3,16 @@
  */
 import React from 'react';
 import {findDOMNode} from 'react-dom';
+import propTypes from 'prop-types';
 
 class NoReferer extends React.PureComponent{
   constructor (props){
     super(props)
   }
   componentDidMount () {
-    var el = findDOMNode(this);
-    var iframe = document.createElement('iframe');
-    let url="http://v3-default.bytecdn.cn/2c567b7586e8ededa777f08caf363fbd/5d13bd07/video/m/220fd0f9017372b42d59d4558abba00012911629e5220000164f6522e4ac/?rc=M3A3OTllZzxtbjMzOzczM0ApQHRAbzk3NzQ8MzgzMzY3MzUzNDVvQGg2dilAZzN3KUBmM3UpZHNyZ3lrdXJneXJseHdmOzpAbWtrY3FzZy0wXy0tYy0wc3MtbyNvIzUxNC0xMi4uMDAuNDM2LTojbyM6YS1vIzpgLXAjOmB2aVxiZitgXmJmK15xbDojMy5e"
-    var html = `<video width="250" autoplay controls src=${url}/>`;
-    iframe.src = 'javascript:void(function(){document.open();document.write(\'' + html + '\');document.close();}())';
+    let el = findDOMNode(this);
+    let iframe = document.createElement('iframe');
+    iframe.src = 'javascript:void(function(){document.open();document.write(\'' + this.props.html + '\');document.close();}())';
     // iframe.style.position = 'fixed';
     iframe.style.width = '400px';
     iframe.style.height = '200px';
@@ -31,5 +30,10 @@ class NoReferer extends React.PureComponent{
     )
   }
 }
-
+NoReferer.PropTypes={
+  html:propTypes.string
+}
+NoReferer.defaultProps={
+  html:`<video width="250" autoplay controls src="https://qiniu-video5.vmoviercdn.com/5d1436d18c64a.mp4">`,
+}
 export default NoReferer

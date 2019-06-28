@@ -1,0 +1,21 @@
+---
+name: NoReferer
+router: /no-referer
+---
+
+import { Playground, Props } from 'docz'
+import NoReferer from './index.js'
+
+# NoReferer
+
+<Props of={NoReferer} />
+
+## Basic usage
+
+<Playground>
+ <NoReferer html={`<video width="250" controls src="https://qiniu-video5.vmoviercdn.com/5d1436d18c64a.mp4">`}/>
+ <NoReferer html={`<img width="250"  src="https://mmbiz.qpic.cn/mmbiz_jpg/3niawZYSWQAxmmxsgvwL6JrTibkQR70CIwHdfZJ4Nx7vPmr6uqluNGF0gLMaXTNZN3Q2EMIycGFGR4H2dK7mp1BQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">`}/>
+</Playground>
+
+
+
