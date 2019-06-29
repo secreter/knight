@@ -1,0 +1,32 @@
+---
+name: VisibleHOC
+---
+
+import { Playground, Props } from 'docz'
+import Demo from './demo.js'
+
+# VisibleHOC
+# VisibleHOC
+# VisibleHOC
+# VisibleHOC
+# VisibleHOC
+# VisibleHOC
+# VisibleHOC
+# VisibleHOC
+VisibleHOC 高阶组件，可以监听组件是否在视口内，以及可以配置多大的可见百分比。使用了IntersectionObserver API。
+https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver/IntersectionObserver
+> const Com=VisibleHOC(Comp,[, options])
+
+* onShow
+* onHide
+* onFirstShow
+
+## Basic usage
+<Playground>
+ <Demo
+    onShow={()=>console.log('onShow')}
+    html={`<img width="250"  src="https://mmbiz.qpic.cn/mmbiz_jpg/3niawZYSWQAxmmxsgvwL6JrTibkQR70CIwHdfZJ4Nx7vPmr6uqluNGF0gLMaXTNZN3Q2EMIycGFGR4H2dK7mp1BQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">`}/>
+</Playground>
+
+
+
